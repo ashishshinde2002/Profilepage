@@ -64,7 +64,7 @@ export const Footar = () => {
     <a href="https://www.naukri.com/profile" target="_blank" rel="noopener noreferrer">
       <FaBriefcase /> {/* For Naukri */}
     </a>
-    <a href="https://github.com/ashishshinde7083" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/ashishshinde2002" target="_blank" rel="noopener noreferrer">
       <FaGithub />
     </a>
   </div>
