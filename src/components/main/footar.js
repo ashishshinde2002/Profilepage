@@ -3,7 +3,7 @@ import './footar.css';
 import emailjs from '@emailjs/browser';
 
 // Import icons
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaBriefcase } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt,  FaInstagram, FaLinkedinIn, FaGithub, FaBriefcase } from 'react-icons/fa';
 
 
 export const Footar = () => {
