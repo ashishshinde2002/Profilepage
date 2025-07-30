@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    
+  }
+  
+  .gallery-box {
+    text-align: center;
+    max-width: 700px;
+    color: white;
+    
+    border-bottom: 1px solid white;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .profile-img-rect {
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px; /* slight rounded corners for a modern look */
+  }
+  
+  .title {
+    color: orange;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    margin: 0 20px 30px;
+  }
+  
+  .quote-icon {
+    font-size: 30px;
+    color: white;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-top: 30px;
+  }
+  
+  .nav-btn {
+    background-color: orange;
+    background: transparent;
+    color:orange;
+    border: 1px solid orange; /* <-- fixed here */
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 400;
+    transition: background 0.2s;
+  }
+
+  .nav-btn:hover {
+    color: black;
+    background: orange;
+  }
+  

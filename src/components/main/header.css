@@ -1,0 +1,97 @@
+ 
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 60px 0 60px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-circle {
+    background: orange;
+    color: black;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: 600;
+    display: inline-block;
+    white-space: wrap;
+    position: relative;
+  }
+
+  .typing-demo {
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: 10px;
+    font-weight: bold;
+    backdrop-filter: blur(3px);
+    color: orange;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid orange;
+    width: 0;
+    animation:
+      typing 3s steps(30) forwards infinite,
+      blink-caret 0.5s step-end infinite;
+  }
+  
+  /* Typing effect */
+  @keyframes typing {
+    0% { width: 0; }
+    25% { width: 130px; } /* "ASHISH" has 6 characters */
+    75% { width: 130px; }
+    100% { width: 0; }
+  }
+  
+  /* Cursor blink */
+  @keyframes blink-caret {
+    0%, 100% { border-color: transparent; }
+    50% { border-color:#eabf3e; }
+  }
+  
+  
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .nav a:hover {
+    color: orange;
+  }
+  
+  .social {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
