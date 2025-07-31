@@ -8,7 +8,7 @@ import {
 } from 'react-icons/si';
 import resume from '../../assets/AshishResume.pdf';
 import './about.css';
-import profilePic from '../../assets/ashishprofile.png';
+import profilePic from '../../assets/pf.jpg';
 
 const About = () => {
   return (

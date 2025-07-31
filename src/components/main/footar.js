@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './footar.css';
 import emailjs from '@emailjs/browser';
 
@@ -8,6 +8,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt,  FaInstagram, FaLinkedinIn, FaGith
 
 export const Footar = () => {
   const form = useRef();
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,6 +20,12 @@ export const Footar = () => {
       .then(
         () => {
           console.log('SUCCESS!');
+          setIsSubmitted(true);
+          form.current.reset();
+          // Hide the success message after 5 seconds
+          setTimeout(() => {
+            setIsSubmitted(false);
+          }, 5000);
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -35,12 +42,13 @@ export const Footar = () => {
         <div className="footer-form">
         
         <form ref={form} onSubmit={sendEmail}>
-  <input type="text" name="user_name" placeholder="Your Name" />
-  <input type="email" name="user_email" placeholder="Your Email" />
-  <input type="text" name="user_phone" placeholder="Your Phone" />
-  <textarea name="message" placeholder="Write a Message"></textarea>
-  <button type="submit">Send Message</button>
-</form>
+    {isSubmitted && <div className="success-message">Message sent successfully! i'll get back to you soon.</div>}
+    <input type="text" name="user_name" placeholder="Your Name" required />
+    <input type="email" name="user_email" placeholder="Your Email" required />
+    <input type="text" name="user_phone" placeholder="Your Phone" required />
+    <textarea name="message" placeholder="Write a Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
         </div>
 

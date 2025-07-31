@@ -1,97 +1,189 @@
- 
-  /* Header styles */
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3.75rem 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo-circle {
+  background: orange;
+  color: black;
+  border-radius: 50%;
+  width: 2.375rem;
+  height: 2.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.625rem;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+}
+
+.typing-demo {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: 0.625rem;
+  font-weight: bold;
+  color: orange;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid orange;
+  width: 0;
+  animation:
+    typing 3s steps(30) forwards infinite,
+    blink-caret 0.5s step-end infinite;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: orange;
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+/* Typing effect */
+@keyframes typing {
+  0% { width: 0; }
+  25% { width: 6rem; } /* 130px / 16 */
+  75% { width: 6rem; }
+  100% { width: 0; }
+}
+
+/* Cursor blink */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #eabf3e; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 32px 60px 0 60px;
-    backdrop-filter: blur(3px);
-    background-color: rgba(0, 0, 0, 0.7);
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    padding: 1.25rem 2.5rem 0;
   }
   
+  .logo-text, .typing-demo {
+    font-size: 1.25rem;
+  }
+  
+  .nav {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   
   .logo {
-    display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
   }
   
-  .logo-circle {
-    background: orange;
-    color: black;
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 10px;
+  .menu-btn {
+    display: block;
   }
   
-  .logo-text {
-    font-size: 2rem;
-    font-weight: 600;
-    display: inline-block;
-    white-space: wrap;
-    position: relative;
-  }
-
-  .typing-demo {
-    display: inline-block;
-    font-size: 2rem;
-    margin-left: 10px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    color: orange;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid orange;
-    width: 0;
-    animation:
-      typing 3s steps(30) forwards infinite,
-      blink-caret 0.5s step-end infinite;
-  }
-  
-  /* Typing effect */
-  @keyframes typing {
-    0% { width: 0; }
-    25% { width: 130px; } /* "ASHISH" has 6 characters */
-    75% { width: 130px; }
-    100% { width: 0; }
-  }
-  
-  /* Cursor blink */
-  @keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
-    50% { border-color:#eabf3e; }
-  }
-  
-  
-
   .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+  
+  .nav.active {
     display: flex;
-    align-items: center;
-    gap: 28px;
   }
   
   .nav a {
-    color: #fff;
-    text-decoration: none;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem 0;
+    margin-right: 0.1rem;
+    background-color: rgb(19, 18, 18);
+    position: sticky;
+    z-index: 1;
+   
+  }
+  
+  .logo-text, .typing-demo {
     font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.2s;
   }
   
-  .nav a:hover {
-    color: orange;
+  .logo-circle {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* For very small devices */
+@media (max-width: 360px) {
+  .logo-text {
+    display: none;
   }
   
-  .social {
-    font-size: 1.2rem;
-    margin-left: 10px;
+  .typing-demo {
+    margin-left: 0;
   }
-  
+}

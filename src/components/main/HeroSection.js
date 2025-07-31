@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import profileImg from "../../assets/ashishprofile.png";
+import profileImg from "../../assets/pf.jpg";
 
 const HeroSection = () => (
   <div id="home" className="hero-section">
